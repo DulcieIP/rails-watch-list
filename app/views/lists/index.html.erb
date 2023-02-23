@@ -1,0 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);">
+  <div class="container">
+     <h1>My to-watch lists</h1>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="cards">
+      <% @lists.each do |list|%>
+        <%= link_to list_path(list) do %>
+          <div class="card-category" style="background-image: url('<%= list.photo_url %>')">
+            <%= list.name %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%= link_to "Add a new list", new_list_path, class:"btn btn-ghost"%>
+  </div>
